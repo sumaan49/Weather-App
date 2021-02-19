@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
@@ -22,10 +24,32 @@
   </form>
   <div class="wrapper">
     <div class="display-container">
-      <p class="time">2021/02/03 10:36pm</p>
-      <h1 class="location">santa rosa</h1>
-      <p class="status">mostly sunny</p>
-      <p class="temperature">43 <span class="degree">&#8451;</span></p>
+      <div class="toggle-container">
+        <input type="checkbox" name="checkbox" />
+        <div class="slider round"></div>
+      </div>
+      <p class="time">---</p>
+      <h1 class="location">-----</h1>
+      <p class="status">--</p>
+      <p class="temperature"></p>
+    </div>
+  </div>
+  <div class="details-wrapper">
+    <div class="header feel-header">
+      <p class="inner">Feels like</p>
+      <div class="feel">-</div>
+    </div>
+    <div class="header humidity-header">
+      <p class="inner">Humidity</p>
+      <div class="humidity">-</div>
+    </div>
+    <div class="header max-header">
+      <p class="inner">Maximum</p>
+      <div class="max">-</div>
+    </div>
+    <div class="header min-header">
+      <p class="inner">Minimum</p>
+      <div class="min">-</div>
     </div>
   </div>
   <script src="app.js"></script>
