@@ -101,11 +101,15 @@ i {
 
 .temperature {
   margin-top: 1rem;
-  font-size: 5rem;
+  font-size: 4rem;
   text-shadow: 2px 2px rgb(54, 52, 52);
 }
 
 .celsius {
+  display: block;
+}
+
+.fahrenheit {
   display: none;
 }
 
