@@ -9,7 +9,6 @@ const feel = document.querySelector('.feel');
 const humidity = document.querySelector('.humidity');
 
 
-
 const userInput = document.querySelector('.userInput');
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
@@ -28,7 +27,7 @@ async function getWeather(location) {
     display(processedData);
 
   } catch(error) {
-    console.log(error)
+    displayError();
   }
 }
 
@@ -50,6 +49,10 @@ function processData(data) {
 }
 
 function display(data) {
+  const error = document.querySelector('.error');
+  error.style.display = 'none';
+  userInput.style.border = '1px solid rgb(243, 243, 243)';
+
   city.innerHTML = `${data.location}, ${data.country}`;
   status.innerHTML = data.status;
   humidity.innerHTML = data.humidity + '%';
@@ -58,12 +61,12 @@ function display(data) {
   min.innerHTML = data.min + '&degF';
   feel.innerHTML = data.feel + '&degF';
 }
+
 const checkbox = document.querySelector("[name=checkbox]");
 checkbox.addEventListener('change', toggleTemperature);
 
-
 function toggleTemperature(e) {
-  if (!e.target.checked) {
+  if (e.target.checked) {
     temperature.innerHTML = toCelsius(refinedData.temperature.value) + '&degC';
     max.innerHTML = toCelsius(refinedData.max) + '&degC';
     min.innerHTML = toCelsius(refinedData.min) + '&degC';
@@ -77,14 +80,11 @@ function toggleTemperature(e) {
 }
 
 
-
-
-
-
-
-
-
-
+function displayError() {
+  const error = document.querySelector('.error');
+  error.style.display = 'block';
+  userInput.style.border = '2px solid #F44336';
+}
 
 
 

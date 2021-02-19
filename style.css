@@ -34,6 +34,17 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-top: 2rem;
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  top: 58px;
+  color:rgb(7, 3, 1);
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 1.1em;
+  display: none;
+  color: rgb(238, 230, 230);
 }
 
 .userInput {
@@ -41,7 +52,7 @@ body {
   height: 3rem;
   border-radius: 30px;
   padding-left: 30px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   letter-spacing: 0.08rem;
   outline: none;
   border: 1px solid rgb(243, 243, 243);
@@ -77,7 +88,7 @@ i {
 
 .display-container {
   width: 65vh;
-  height: 32vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +102,7 @@ i {
 
 .toggle-container {
   position: absolute;
-  top: 74%;
+  top: 66%;
   left: 75%;
   display: inline-block;
   width: 55px;
@@ -104,6 +115,7 @@ i {
   width: 100%;
   height: 100%;
   pointer-events: all;
+
 }
 
 .slider {
@@ -114,7 +126,6 @@ i {
   bottom: 0;
   cursor: pointer;
   background-color: rgb(196, 106, 204);
-  transition: 0.4s;
   pointer-events: none;
 }
 
@@ -126,7 +137,7 @@ i {
   left: 4px;
   top: 3px;
   background-color: rgb(20, 20, 20);
-  transition: 0.5s;
+  transition: 0.3s all ease-in-out ;
   pointer-events: none;
 }
 
@@ -138,8 +149,6 @@ input:checked + .slider:before {
   transform: translateX(22px);
 }
 
-
-
 .slider.round {
   border-radius: 34px;
 }
@@ -148,28 +157,13 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
-
-
-
-
-
-
-
-
 .location {
+  margin-top: 1.5rem;
   font-size: 6vh;
   text-shadow: 2px 2px rgb(54, 52, 52);
   text-transform: capitalize;
   font-family: 'Nanum Myeongjo', serif;
   font-weight: bold;
-}
-
-.time {
-  margin: 1rem;
-  font-weight: bold;
-  font-family: 'Nanum Myeongjo', serif;
-  text-shadow: 1px 1px rgb(54, 52, 52);
 }
 
 .temperature {
