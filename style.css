@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Risque', cursive;
+  border: 2px brown solid;
+  background: linear-gradient(45deg,#e93b07, #0a759c, #ad3d68, #01ff88);
+  background-size: 350% 350%;
+  background-color:rgba(0,0,0,0.8);
+  animation: change 15s ease-in-out infinite;
+}
+
+.wrapper {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  color: rgb(204, 197, 197);
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.userInput {
+  width: 50%;
+  height: 3rem;
+  border-radius: 30px;
+  padding-left: 30px;
+  font-size: 1.3rem;
+  letter-spacing: 0.08rem;
+  outline: none;
+  border: 1px solid rgb(243, 243, 243);
+  margin-left: 20px;
+  background: inherit;
+  background-color:rgba(0,0,0,0.05);
+  color: rgb(235, 226, 226);
+
+}
+
+::placeholder {
+  color:rgb(153, 153, 153);
+  font-size: 1rem;
+}
+
+.button {
+  height: 3rem;
+  border: none;
+  outline: none;
+  background: none;
+  color:rgb(202, 198, 198);
+  cursor: pointer;
+  padding-bottom: 0.7rem;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+i {
+  padding: 15px 0 0 10px;
+}
+
+.display-container {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+
+}
+
+.location {
+  font-size: 3.2rem;
+  text-shadow: 2px 2px rgb(54, 52, 52);
+  text-transform: capitalize;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: bold;
+}
+
+.time {
+  margin: 1rem;
+  font-weight: bold;
+  font-family: 'Nanum Myeongjo', serif;
+  text-shadow: 1px 1px rgb(54, 52, 52);
+}
+
+.temperature {
+  margin-top: 1rem;
+  font-size: 5rem;
+  text-shadow: 2px 2px rgb(54, 52, 52);
+}
+
+.celsius {
+  display: none;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-family: 'Nanum Myeongjo', serif;
+  text-shadow: 1px 1px rgb(54, 52, 52);
+}
+
+
+@keyframes change {
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
