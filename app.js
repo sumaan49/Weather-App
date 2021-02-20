@@ -1,3 +1,4 @@
+
 const refinedData = {};
 let query;
 const city = document.querySelector('.location');
