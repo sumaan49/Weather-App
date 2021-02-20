@@ -1,5 +1,5 @@
 const refinedData = {};
-
+let query;
 const city = document.querySelector('.location');
 const status = document.querySelector('.status');
 const temperature = document.querySelector('.temperature');
@@ -7,21 +7,52 @@ const max = document.querySelector('.max');
 const min = document.querySelector('.min');
 const feel = document.querySelector('.feel');
 const humidity = document.querySelector('.humidity');
-
-
 const userInput = document.querySelector('.userInput');
 const form = document.querySelector('form');
+const map = document.querySelector('.map');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   getWeather(userInput.value);
   form.reset();
+});
+
+map.addEventListener('mouseenter', () => {
+  document.querySelector('.getLocation').style.display = 'block';
+});
+map.addEventListener('mouseleave', () => {
+  document.querySelector('.getLocation').style.display = 'none';
+})
+
+map.addEventListener('click', () => {
+
+  function success(position) {
+    console.log(position.coords.latitude);
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    let userLocation = `lat=${latitude}&lon=${longitude}`;
+    getWeather(userLocation);
+  }
+  function error() {
+    alert(error);
+  }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert('Geolocation is not supported by your browser');
+  }
 })
 
 
+
 async function getWeather(location) {
+  var hasNumber = /\d/;
+  if (!hasNumber.test(location)) {
+    location = `q=${location}`;
+  }
   const API_KEY = '59cbdfb65fdbf0c6d242e666b469b429'
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`, {mode: 'cors'});
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?${location}&appid=${API_KEY}`, {mode: 'cors'});
     const data = await response.json();
     const processedData = processData(data);
     display(processedData);
@@ -85,8 +116,6 @@ function displayError() {
   error.style.display = 'block';
   userInput.style.border = '2px solid #F44336';
 }
-
-
 
 
 
